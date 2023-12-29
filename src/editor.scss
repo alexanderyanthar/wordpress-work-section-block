@@ -3,3 +3,59 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+
+[data-type="create-block/work"] {
+	> [data-type="create-block/work"] {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 3rem;
+
+		.wp-blocks-work-image {
+			position: relative;
+
+			&.is-loading img {
+				opacity: 0.3;
+			}
+
+			.components-spinner {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+			}
+		}
+
+		.wp-blocks-work-text-container {
+			width: 50%;
+			margin-left: 1rem;
+
+			h3,
+			p {
+				margin: 0;
+				padding: 0;
+			}
+
+			.wp-block-work-skill-list-item {
+				margin-bottom: 0.5rem;
+			}
+
+			.wp-block-work-edit-skill-button-container {
+				display: flex;
+				align-items: center;
+
+				.wp-block-work-edit-skill-button {
+					margin-right: 0.5rem;
+				}
+			}
+
+			.wp-block-work-edit-skill-div {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+	}
+}

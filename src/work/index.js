@@ -18,8 +18,13 @@ registerBlockType("create-block/work", {
 			source: "html",
 			selector: "h3",
 		},
+		skill: {
+			type: "string",
+			default: "",
+		},
 		skillList: {
 			type: "array",
+			default: [],
 		},
 		workDescription: {
 			type: "string",

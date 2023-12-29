@@ -4,3 +4,20 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+
+.wp-block-create-block-work {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 3rem;
+
+	img {
+	}
+
+	.wp-block-work-text-container {
+		width: 50%;
+
+		ul {
+		}
+	}
+}

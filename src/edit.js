@@ -11,7 +11,7 @@ export default function Edit({ attributes, setAttributes }) {
 	};
 
 	return (
-		<div {...useBlockProps()}>
+		<div className="wp-blocks-work-section" {...useBlockProps()}>
 			<RichText
 				placeholder={__("Work Section Title", "work-section")}
 				tagName="h2"
