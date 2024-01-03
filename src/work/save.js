@@ -1,4 +1,5 @@
 import { useBlockProps, RichText } from "@wordpress/block-editor";
+import { Tooltip } from "@wordpress/components";
 
 export default function Save({ attributes }) {
 	const {
@@ -31,18 +32,27 @@ export default function Save({ attributes }) {
 					</div>
 				)}
 				<RichText.Content tagName="p" value={workDescription} />
-				{liveLink === "" && (
+				{liveLink !== "" && (
 					<a
 						className="wp-block-work-section-button wp-block-work-section-button1"
 						href={liveLink}
+						target="_blank"
 					>
 						View Live
 					</a>
 				)}
-				{codeLink === "" && (
-					<a className="wp-block-work-section-button" href={codeLink}>
+				{codeLink !== "" && (
+					<a
+						className="wp-block-work-section-button"
+						href={codeLink}
+						target="_blank"
+					>
 						View Code
 					</a>
+				)}
+
+				{liveLink === "" && codeLink === "" && (
+					<span className="wp-block-work-section-button-span">Coming soon</span>
 				)}
 			</div>
 		</div>
