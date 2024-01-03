@@ -13,6 +13,7 @@
 
 		.wp-blocks-work-image {
 			position: relative;
+			width: 60%;
 
 			&.is-loading img {
 				opacity: 0.3;
@@ -29,7 +30,7 @@
 		}
 
 		.wp-blocks-work-text-container {
-			width: 50%;
+			width: 40%;
 			margin-left: 1rem;
 
 			h3,
@@ -55,6 +56,34 @@
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
+			}
+		}
+
+		.wp-block-work-section-button {
+			outline: none;
+			border: none;
+			background-color: #fbaf01;
+			padding: 0.5rem 2rem;
+			margin-top: 1rem;
+		}
+
+		.wp-block-work-section-button1 {
+			margin-right: 0.5rem;
+		}
+	}
+}
+
+@media (max-width: 1025px) {
+	[data-type="create-block/work"] {
+		> [data-type="create-block/work"] {
+			flex-direction: column;
+
+			.wp-blocks-work-image {
+				width: 100%;
+			}
+
+			.wp-blocks-work-text-container {
+				width: 100%;
 			}
 		}
 	}

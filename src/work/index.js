@@ -47,6 +47,18 @@ registerBlockType("create-block/work", {
 			selector: "img",
 			attribute: "src",
 		},
+		liveLink: {
+			type: "string",
+			source: "attribute",
+			selector: "a",
+			attribute: "href",
+		},
+		codeLink: {
+			type: "string",
+			source: "attribute",
+			selector: "a",
+			attribute: "href",
+		},
 	},
 	edit: Edit,
 	save: Save,

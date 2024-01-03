@@ -24,11 +24,22 @@ import { useEffect, useState } from "@wordpress/element";
 import { useSelect } from "@wordpress/data";
 
 function Edit({ attributes, setAttributes, noticeOperations, noticeUI }) {
-	const { workTitle, workDescription, skillList, skill, url, id, alt } =
-		attributes;
+	const {
+		workTitle,
+		workDescription,
+		skillList,
+		skill,
+		url,
+		id,
+		alt,
+		liveLink,
+		codeLink,
+	} = attributes;
 	const [bloblURL, setBlobURL] = useState();
 	const [isEditing, setIsEditing] = useState();
 	const [editedSkill, setEditedSkill] = useState("");
+	const [isViewLiveSelected, setIsViewLiveSelected] = useState(false);
+	const [isViewCodeSelected, setIsViewCodeSelected] = useState(false);
 
 	const imageObject = useSelect(
 		(select) => {
@@ -155,6 +166,22 @@ function Edit({ attributes, setAttributes, noticeOperations, noticeUI }) {
 			setBlobURL();
 		}
 	}, [url]);
+
+	const handleIsViewLive = () => {
+		setIsViewLiveSelected(!isViewLiveSelected);
+	};
+
+	const handleLiveLink = (newLiveLink) => {
+		setAttributes({ liveLink: newLiveLink });
+	};
+
+	const handleIsCodeLive = () => {
+		setIsViewCodeSelected(!isViewCodeSelected);
+	};
+
+	const handleCodeLink = (newCodeLink) => {
+		setAttributes({ codeLink: newCodeLink });
+	};
 
 	return (
 		<>
@@ -288,6 +315,36 @@ function Edit({ attributes, setAttributes, noticeOperations, noticeUI }) {
 						placeholder={__("Description of work", "work")}
 						allowedFormats={[]}
 					/>
+					<button
+						onClick={handleIsViewLive}
+						className="wp-block-work-section-button wp-block-work-section-button1"
+					>
+						View Live
+					</button>
+					<button
+						className="wp-block-work-section-button"
+						onClick={handleIsCodeLive}
+					>
+						View Code
+					</button>
+					{isViewLiveSelected && (
+						<>
+							<TextControl
+								label={__("Add live site link", "work")}
+								value={liveLink}
+								onChange={handleLiveLink}
+							/>
+						</>
+					)}
+					{isViewCodeSelected && (
+						<>
+							<TextControl
+								label={__("Add code link", "work")}
+								value={codeLink}
+								onChange={handleCodeLink}
+							/>
+						</>
+					)}
 				</div>
 			</div>
 		</>

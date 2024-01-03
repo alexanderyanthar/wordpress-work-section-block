@@ -11,13 +11,36 @@
 	justify-content: space-between;
 	margin-bottom: 3rem;
 
-	img {
+	.wp-block-work-section-image-container {
+		width: 60%;
 	}
 
 	.wp-block-work-text-container {
-		width: 50%;
+		width: 40%;
+	}
 
-		ul {
+	.wp-block-work-section-button {
+		background-color: #fbaf01;
+		padding: 0.5rem 2rem;
+		margin-top: 1rem;
+		text-decoration: none;
+	}
+
+	.wp-block-work-section-button1 {
+		margin-right: 0.5rem;
+	}
+}
+
+@media (max-width: 1025px) {
+	.wp-block-create-block-work {
+		flex-direction: column;
+
+		.wp-block-work-section-image-container {
+			width: 100%;
+		}
+
+		.wp-block-work-text-container {
+			width: 100%;
 		}
 	}
 }
